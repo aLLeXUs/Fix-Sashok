@@ -27,7 +27,7 @@ public class Settings
         
 	public static String[] servers =
 	{
-		"Offline, localhost, 25565, 1.5.2",
+		"",
 	};
 
 	/** Настройка панели ссылок **/
