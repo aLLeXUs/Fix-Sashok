@@ -97,7 +97,7 @@ public class BaseUtils
 		{
 			case 1: return new File(System.getProperty("user.home", "") + path);
 			case 2:
-				String appData = System.getenv("SYSTEMDRIVE");
+				String appData = System.getenv(Settings.basedir);
 				if(appData != null) return new File(appData + path);
 				else return new File(home + path);
 			case 3: return new File(home, path);
@@ -113,7 +113,7 @@ public class BaseUtils
 		{
 			case 1: return new File(System.getProperty("user.home", "") + path);
 			case 2:
-				String appData = System.getenv("SYSTEMDRIVE");
+				String appData = System.getenv(Settings.basedir);
 				if(appData != null) return new File(appData + path);
 				else return new File(home + path);
 			case 3: return new File(home, path);
@@ -129,7 +129,7 @@ public class BaseUtils
 		{
 			case 1: return new File(System.getProperty("user.home", ""), path);
 			case 2:
-				String appData = System.getenv("SYSTEMDRIVE");
+				String appData = System.getenv(Settings.basedir);
 				if(appData != null) return new File(appData, path);
 				else return new File(home, path);
 			case 3: return new File(home, path);
