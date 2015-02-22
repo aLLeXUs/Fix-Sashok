@@ -9,7 +9,7 @@ public class Settings
 	/** Настройка заголовка лаунчера */
 	public static final String  title		         = "Launcher"; //Заголовок лаунчера
 	public static final String  titleInGame  	     = "Minecraft"; //Заголовок лаунчера после авторизации
-        public static final String  basedir                 = "AppData"; //Родительская папка для Minecraft (только для Windows) [ProgramFiles, AppData]
+        public static final String  basedir                 = "SystemDrive"; //Родительская папка для Minecraft (только для Windows) [ProgramFiles, AppData]
 	public static final String  baseconf		     = ".allexus"; //Папка с файлом конфигурации
 	public static final String  pathconst		     = ".allexus/%SERVERNAME%"; //Конструктор пути к папке с MC
 	public static final String  skins                = "MinecraftSkins/"; //Папка скинов
@@ -56,7 +56,7 @@ public class Settings
 
 	public static boolean debug		 	         =  true; //Отображать все действия лаунчера (отладка)(true/false)
 	public static boolean drawTracers		     =  false; //Отрисовывать границы элементов лаунчера
-	public static final String masterVersion     = "final_RC4"; //Версия лаунчера
+	public static final String masterVersion     = "Beta-1"; //Версия лаунчера
 
 	public static boolean patchDir 		         =  true; //Использовать автоматическую замену директории игры (true/false)
 	
