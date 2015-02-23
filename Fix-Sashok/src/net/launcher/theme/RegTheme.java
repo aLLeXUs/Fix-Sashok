@@ -12,10 +12,10 @@ import net.launcher.components.TextfieldStyle;
 
 public class RegTheme
 {
-    public static TextfieldStyle	loginReg		= new TextfieldStyle(390, 164, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, new EmptyBorder(0, 10, 0, 10));
-	public static PassfieldStyle	passwordReg		= new PassfieldStyle(390, 208, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, "*", new EmptyBorder(0, 10, 0, 10));
-	public static PassfieldStyle	password2Reg    = new PassfieldStyle(390, 254, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, "*", new EmptyBorder(0, 10, 0, 10));
-	public static TextfieldStyle	mailReg		    = new TextfieldStyle(390, 300, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, new EmptyBorder(0, 10, 0, 10));
+    public static TextfieldStyle	loginReg		= new TextfieldStyle(390, 164, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, Align.LEFT, new EmptyBorder(0, 10, 0, 10));
+	public static PassfieldStyle	passwordReg		= new PassfieldStyle(390, 208, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, "*", Align.LEFT, new EmptyBorder(0, 10, 0, 10));
+	public static PassfieldStyle	password2Reg    = new PassfieldStyle(390, 254, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, "*", Align.LEFT, new EmptyBorder(0, 10, 0, 10));
+	public static TextfieldStyle	mailReg		    = new TextfieldStyle(390, 300, 220, 36, "textfield", "font", 16F, Color.DARK_GRAY, Color.WHITE, Align.LEFT, new EmptyBorder(0, 10, 0, 10));
 	
 	public static ComponentStyle textloginReg		  = new ComponentStyle(380, 164, -1, -1, "font", 16F, Color.WHITE, true);
 	public static ComponentStyle textpasswordReg      = new ComponentStyle(380, 208, -1, -1, "font", 16F, Color.WHITE, true);

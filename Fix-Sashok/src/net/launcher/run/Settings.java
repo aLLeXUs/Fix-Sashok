@@ -43,7 +43,7 @@ public class Settings
 	public static boolean useMulticlient		 =  true;   //Использовать функцию "по клиенту на сервер"
 	public static boolean useStandartWB		     =  true;   //Использовать стандартный браузер для открытия ссылок
 	public static boolean usePersonal		     =  false;   //Использовать Личный кабинет
-	public static boolean customframe 		     =  true;   //Использовать кастомный фрейм
+	public static boolean customframe 		     =  false;   //Использовать кастомный фрейм
 	public static boolean useConsoleHider		 =  false;  //Использовать скрытие консоли клиента
 	public static boolean useModCheckerTimer	 =  true;   //Перепроверка jar через 30 секунд
 	public static int     useModCheckerint       =  2;      //Количество раз перепроверки jar во время игры
