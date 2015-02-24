@@ -444,7 +444,8 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 			}
 			setAuthComp();
 		}
-
+                
+                if(e.getSource() == fullscreen || e.getSource() == loadnews)
 		{
 			setProperty("fullscreen", fullscreen.isSelected());
 			setProperty("loadnews",   loadnews.isSelected());

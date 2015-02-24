@@ -32,7 +32,7 @@ public class LoginTheme
 	public static ButtonStyle	 toRegister  = new ButtonStyle(30, 436, 230, 40, "font", "button", fontbasesize, Color.YELLOW, true, Align.CENTER);
 	
 	public static TextfieldStyle login		= new TextfieldStyle(30, 30, 230, 36, "textfield", "font", fontbasesize, Color.WHITE, Color.DARK_GRAY, Align.CENTER, new EmptyBorder(0, 10, 0, 10));
-	public static PassfieldStyle password	= new PassfieldStyle(30, 70, 195, 36, "textfield", "font", fontbasesize, Color.WHITE, Color.DARK_GRAY, "*", Align.CENTER, new EmptyBorder(0, 10, 0, 10));
+	public static PassfieldStyle password	= new PassfieldStyle(30, 70, 230, 36, "textfield", "font", fontbasesize, Color.WHITE, Color.DARK_GRAY, "*", Align.CENTER, new EmptyBorder(0, 10, 0, 10));
 	
 	public static ComponentStyle newsBrowser= new ComponentStyle(320, 30, 450, 740, "font", fontbasesize, Color.WHITE, true);
 	public static LinklabelStyle links		= new LinklabelStyle(30, 450, 0, "font", fontbasesize, Color.WHITE, Color.LIGHT_GRAY);

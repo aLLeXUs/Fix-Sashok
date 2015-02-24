@@ -35,7 +35,7 @@ public class Game extends JFrame
 	public Game(final String answer)
 	{
 		GuardUtils.getLogs(new File(BaseUtils.getAssetsDir().getAbsolutePath()+File.separator+BaseUtils.getClientName()));
-		String bin = BaseUtils.getMcDir().toString() + File.separator;	
+		String bin = BaseUtils.getMcDir().toString() + File.separator + "bin" + File.separator;	
 		cl = new eURLClassLoader(GuardUtils.url.toArray(new URL[GuardUtils.url.size()]));
 		boolean old = false;
 		try
@@ -162,7 +162,7 @@ public class Game extends JFrame
 			try
 			{
 				System.out.println("Running Minecraft");
-				String jarpath = BaseUtils.getMcDir().toString() + File.separator;
+				String jarpath = BaseUtils.getMcDir().toString() + File.separator + "bin" + File.separator;
 				String minpath = BaseUtils.getMcDir().toString();
 				String assets = BaseUtils.getAssetsDir().toString() + File.separator;
 				System.setProperty("fml.ignoreInvalidMinecraftCertificates", "true");
