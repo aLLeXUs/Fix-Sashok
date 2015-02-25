@@ -162,14 +162,14 @@ public class Game extends JFrame
 			try
 			{
 				System.out.println("Running Minecraft");
-				String jarpath = BaseUtils.getMcDir().toString() + File.separator + "bin" + File.separator;
+				String nativespath = BaseUtils.getMcDir().toString() + File.separator + "natives";
 				String minpath = BaseUtils.getMcDir().toString();
 				String assets = BaseUtils.getAssetsDir().toString() + File.separator;
 				System.setProperty("fml.ignoreInvalidMinecraftCertificates", "true");
 				System.setProperty("fml.ignorePatchDiscrepancies", "true");
-				System.setProperty("org.lwjgl.librarypath", jarpath+"natives");
-				System.setProperty("net.java.games.input.librarypath", jarpath+"natives");
-				System.setProperty("java.library.path", jarpath+"natives");
+				System.setProperty("org.lwjgl.librarypath", nativespath);
+				System.setProperty("net.java.games.input.librarypath", nativespath);
+				System.setProperty("java.library.path", nativespath);
 				if(BaseUtils.getPropertyBoolean("fullscreen"))
 				{          
 					params.add("--fullscreen");
