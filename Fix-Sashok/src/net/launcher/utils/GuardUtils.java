@@ -58,7 +58,7 @@ public class GuardUtils
 				for (String check : client) {
 			        if (!sit.contains(check)) {
 			            File file = new File(check.split(":>")[0]);
-			            if ((file.getName().endsWith(".litemod") || file.getName().endsWith(".zip"))
+			            if (file.getName().endsWith(".litemod") || file.getName().endsWith(".zip")
                                         || file.getName().endsWith(".jar") || file.getName().endsWith(".class")) {
                                         System.err.println("Delete -> " + file);
                                         delete(file);

@@ -16,7 +16,7 @@
 			exit(json_encode($bad));
 		}
 
-		$stmt = $db->prepare("Select md5,user From usersession Where md5= :md5 And session= :sessionid");
+		$stmt = $db->prepare("Select md5,user From ".$db_tables_prefix."usersession Where md5= :md5 And session= :sessionid");
 		$stmt->bindValue(':md5', $md5);
 		$stmt->bindValue(':sessionid', $sessionid);
 		$stmt->execute();
@@ -27,7 +27,7 @@
 		$ok = array('id' => $realmd5, 'name' => $realUser);
 		if($realmd5 == $md5)
 		{
-			$stmt = $db->prepare("Update usersession SET server= :serverid Where session = :sessionid And md5 = :md5");
+			$stmt = $db->prepare("Update ".$db_tables_prefix."usersession SET server= :serverid Where session = :sessionid And md5 = :md5");
 			$stmt->bindValue(':md5', $md5);
 			$stmt->bindValue(':sessionid', $sessionid);
 			$stmt->bindValue(':serverid', $serverid);

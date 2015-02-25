@@ -13,7 +13,7 @@
           exit ("Bad login");
 		}
 
-		$stmt = $db->prepare("Select user From usersession Where session= :sessionid And user= :user");
+		$stmt = $db->prepare("Select user From ".$db_tables_prefix."usersession Where session= :sessionid And user= :user");
 		$stmt->bindValue(':user', $user);
 		$stmt->bindValue(':sessionid', $sessionid);
 		$stmt->execute();
@@ -21,7 +21,7 @@
 		$realUser = $row['user'];
 		if($user == $realUser)
 		{
-			$stmt = $db->prepare("Update usersession SET server= :serverid Where session= :sessionid And user= :user");
+			$stmt = $db->prepare("Update ".$db_tables_prefix."usersession SET server= :serverid Where session= :sessionid And user= :user");
 			$stmt->bindValue(':user', $user);
 			$stmt->bindValue(':sessionid', $sessionid);
 			$stmt->bindValue(':serverid', $serverid);

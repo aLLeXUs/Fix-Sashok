@@ -35,7 +35,7 @@
 				{
 				    $amount = $_GET['price'];
 				    $key = genKey($_GET['len']);
-				    $stmt = $db->prepare("INSERT INTO sashok724_launcher_keys (`key`,`amount`) VALUES (:key, :amount)");
+				    $stmt = $db->prepare("INSERT INTO ".$db_tables_prefix."sashok724_launcher_keys (`key`,`amount`) VALUES (:key, :amount)");
 			        $stmt->bindValue(':key', $key);
 			        $stmt->bindValue(':amount', $amount);
 			        $stmt->execute();

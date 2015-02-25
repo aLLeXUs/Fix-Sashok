@@ -68,10 +68,10 @@ public class Combobox extends JComponent implements MouseListener, MouseMotionLi
 			
 			for(int i = 0; i < elements.length; i++)
 			{
-				g.drawString(elements[i], 5, selectedTX.getHeight() * (i+1) - (g.getFontMetrics().getHeight() / 2));
+				g.drawString(elements[i], 5, selectedTX.getHeight() * (i+1) - (g.getFontMetrics().getHeight() / 4));
 			}
 			
-			g.drawString(elements[selected], 5, selectedTX.getHeight() * (elements.length + 1) - (g.getFontMetrics().getHeight() / 2));
+			g.drawString(elements[selected], 5, selectedTX.getHeight() * (elements.length + 1) - (g.getFontMetrics().getHeight() / 4));
 		} else if(entered)
 		{
 			int righth = pressedTX.getHeight();
@@ -82,7 +82,7 @@ public class Combobox extends JComponent implements MouseListener, MouseMotionLi
 				return;
 			}
 			g.drawImage(genButton(w, rolloverTX.getHeight(), rolloverTX), 0, 0, w, rolloverTX.getHeight(), null);
-			g.drawString(elements[selected], 5, rolloverTX.getHeight() - (g.getFontMetrics().getHeight() / 2));
+			g.drawString(elements[selected], 5, rolloverTX.getHeight() - (g.getFontMetrics().getHeight() / 4));
 		} else
 		{
 			int righth = pressedTX.getHeight();
@@ -93,7 +93,7 @@ public class Combobox extends JComponent implements MouseListener, MouseMotionLi
 				return;
 			}
 			g.drawImage(genButton(w, defaultTX.getHeight(), defaultTX), 0, 0, w, defaultTX.getHeight(), null);
-			g.drawString(elements[selected], 5, rolloverTX.getHeight() - (g.getFontMetrics().getHeight() / 2));
+			g.drawString(elements[selected], 5, rolloverTX.getHeight() - (g.getFontMetrics().getHeight() / 4));
 		}
 		if(Settings.drawTracers)
 		{

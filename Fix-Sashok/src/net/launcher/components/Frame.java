@@ -64,8 +64,7 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 	public Dragbutton hide = new Dragbutton();
 	public Dragbutton close = new Dragbutton();
 
-	public Button update_exe = new Button("exe");
-	public Button update_jar = new Button("jar");
+	public Button update_jar = new Button("Обновить");
 	public Button update_no = new Button("Выход");
 
 	public Checkbox loadnews = new Checkbox("Загружать новости");
@@ -217,7 +216,6 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		hide.addActionListener(this);
 		close.addActionListener(this);
                 
-		update_exe.addActionListener(this);
 		update_jar.addActionListener(this);
 		update_no.addActionListener(this);
 		servers.addMouseListener(new MouseListener()
@@ -373,31 +371,10 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 	{
 		if(e.getSource() == hide) setExtendedState(ICONIFIED);
 		if(e.getSource() == close || e.getSource() == update_no) System.exit(0);
-
-		if(e.getSource() == update_exe)
-		{
-			jar = ".exe";
-			new Thread() { public void run() { try
-			{
-				panel.type = 8;
-				update_exe.setEnabled(false);
-				update_no.setText("Отмена");
-				panel.repaint();
-				BaseUtils.updateLauncher();
-			} catch(Exception e1)
-			{
-				e1.printStackTrace();
-				send("Error updating launcher!");
-				update_no.setText("Выйти");
-				update_exe.setEnabled(true);
-				panel.type = 9;
-				panel.repaint();
-			}}}.start();
-		}
 		
 		if(e.getSource() == update_jar)
 		{
-			jar = ".jar";
+			jar = BaseUtils.getPlatform() == 2 ? ".exe" : ".jar";
 			new Thread() { public void run() { try
 			{
 				panel.type = 8;
@@ -467,7 +444,8 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 			}
 			setAuthComp();
 		}
-
+                
+                if(e.getSource() == fullscreen || e.getSource() == loadnews)
 		{
 			setProperty("fullscreen", fullscreen.isSelected());
 			setProperty("loadnews",   loadnews.isSelected());
@@ -560,7 +538,6 @@ public class Frame extends JFrame implements ActionListener, FocusListener
 		panel.removeAll();
 		addFrameComp();
 		panel.setUpdateState(version);
-		panel.add(update_exe);
 		panel.add(update_jar);
 		panel.add(update_no);
 		repaint();

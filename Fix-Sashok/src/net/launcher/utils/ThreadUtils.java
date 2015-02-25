@@ -251,7 +251,8 @@ public class ThreadUtils
 		BaseUtils.send("Running updater...");
 		updaterThread = new UpdaterThread(files, zipupdate, asupdate, answer);
 		updaterThread.setName("Updater thread");
-		Frame.main.setUpdateState();
+                if (!files.isEmpty())
+                    Frame.main.setUpdateState();
 		updaterThread.run();
 	}
 	

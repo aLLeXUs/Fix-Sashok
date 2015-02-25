@@ -11,7 +11,7 @@
 			exit;
 		}
 
-		$stmt = $db->prepare("Select user From usersession Where user= :user And server= :serverid");
+		$stmt = $db->prepare("Select user From ".$db_tables_prefix."usersession Where user= :user And server= :serverid");
 		$stmt->bindValue(':user', $user);
 		$stmt->bindValue(':serverid', $serverid);
 		$stmt->execute();   

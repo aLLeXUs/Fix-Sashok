@@ -16,31 +16,33 @@
 	'hash_drupal'     	- интеграция с Drupal (v.7)
 	'hash_launcher'		- интеграция с лаунчером sashok724 (Регистрация через лаунчер)
 	*/
-	$crypt 				= 'hash_md5';
+	$crypt 				= 'hash_wordpress';
 	
 	$db_host			= 'localhost'; // Ip-адрес MySQL
 	$db_port			= '3306'; // Порт базы данных
 	$db_user			= 'root'; // Пользователь базы данных
 	$db_pass			= 'root'; // Пароль базы данных
-	$db_database		= 'w'; //База данных
+	$db_database		= 'wordpress'; //База данных
 	
-	$db_table       	= 'accounts'; //Таблица с пользователями
+	$db_table       	= 'wp_users'; //Таблица с пользователями
 	$db_columnId  		= 'id'; //Колонка с ID пользователей
-	$db_columnUser  	= 'login'; //Колонка с именами пользователей
-	$db_columnPass  	= 'password'; //Колонка с паролями пользователей
+	$db_columnUser  	= 'user_login'; //Колонка с именами пользователей
+	$db_columnPass  	= 'user_pass'; //Колонка с паролями пользователей
 	$db_tableOther 		= 'xf_user_authenticate'; //Дополнительная таблица для XenForo, не трогайте
 	$db_columnSalt  	= 'members_pass_salt'; //Настраивается для IPB и vBulletin: , IPB - members_pass_salt, vBulletin - salt
     $db_columnIp  		= 'ip'; //Колонка с IP пользователей
 	
 	$db_columnDatareg   = 'create_time'; // Колонка даты регистрации
 	$db_columnMail      = 'email'; // Колонка mail
+	
+	$db_tables_prefix   = 'lnch_';
 
 	$banlist            = 'banlist'; //Таблица плагина Ultrabans
 	
 	$useban             =  false; //Бан на сервере = бан в лаунчере, Ultrabans плагин
 	$useantibrut        =  true; //Защита от частых подборов пароля (Пауза 1 минута при неправильном пароле)
 	
-	$masterversion  	= 'final_RC4'; //Мастер-версия лаунчера
+	$masterversion  	= 'Beta-1'; //Мастер-версия лаунчера
 	$protectionKey		= '1234567890'; 
 	$key1               = "1234567891234567";  //16 Character Key Ключ пост запросов
 	$key2               = "1234567891234567"; //16 Character  Key  Ключ пост запросов
@@ -52,8 +54,8 @@
 
 //========================= Настройки ЛК =======================//	
 
-	$uploaddirs         = 'MinecraftSkin';  //Папка скинов
-	$uploaddirp         = 'MinecraftCloak'; //Папка плащей
+	$uploaddirs         = 'MinecraftSkins';  //Папка скинов
+	$uploaddirp         = 'MinecraftCloaks'; //Папка плащей
     $skinurl            = 'http://alexandrage.ru/site/'.$uploaddirs.'/'; //Ссылка на скины для клиентов 1.7.+
     $capeurl            = 'http://alexandrage.ru/site/'.$uploaddirp.'/'; //Ссылка на плащи для клиентов 1.7.+
 	
@@ -85,7 +87,7 @@
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db->exec("set names utf8");
 		$stmt = $db->prepare("
-        CREATE TABLE IF NOT EXISTS `usersession` (
+        CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."usersession` (
 	    `id` int(11) NOT NULL AUTO_INCREMENT,
 	    `user` varchar(255) DEFAULT 'user',
 	    `session` varchar(255) DEFAULT NULL,
@@ -98,14 +100,14 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-        CREATE TABLE IF NOT EXISTS `sashok724_launcher_keys` (
+        CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."sashok724_launcher_keys` (
 	    `key` varchar(255) DEFAULT NULL,
 	    `amount` int(255) DEFAULT NULL
 	    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `sip` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."sip` (
 		  `time` varchar(255) NOT NULL,
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `sip` varchar(16) DEFAULT NULL,
@@ -114,7 +116,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `jobs` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."jobs` (
 		  `username` varchar(20) DEFAULT NULL,
 		  `experience` int(11) DEFAULT NULL,
 		  `level` int(11) DEFAULT NULL,
@@ -123,7 +125,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `iConomy` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."iConomy` (
 		  `id` int(255) NOT NULL AUTO_INCREMENT,
 		  `username` varchar(32) NOT NULL,
 		  `balance` double(64,2) NOT NULL,
@@ -134,7 +136,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `banlist` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."banlist` (
 		  `name` varchar(32) NOT NULL,
 		  `reason` text NOT NULL,
 		  `admin` varchar(32) NOT NULL,
@@ -148,7 +150,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `name` varchar(50) NOT NULL,
 		  `type` tinyint(1) NOT NULL,
@@ -163,7 +165,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions_entity` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions_entity` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `name` varchar(50) NOT NULL,
 		  `type` tinyint(1) NOT NULL,
@@ -177,7 +179,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions_inheritance` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions_inheritance` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `child` varchar(50) NOT NULL,
 		  `parent` varchar(50) NOT NULL,

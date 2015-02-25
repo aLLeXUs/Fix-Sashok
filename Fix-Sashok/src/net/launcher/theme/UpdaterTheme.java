@@ -4,9 +4,9 @@ import java.awt.Color;
 
 public class UpdaterTheme
 {
-	public static int	loadbarX = 21;
+	public static int	loadbarX = 20;
 	public static int	loadbarY = 453;
-	public static int	loadbarW = 808;
+	public static int	loadbarW = 760;
 	public static int	loadbarH = 38;
 
 	public static int	stringsX = 40;
