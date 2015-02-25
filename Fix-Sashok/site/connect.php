@@ -16,18 +16,18 @@
 	'hash_drupal'     	- интеграция с Drupal (v.7)
 	'hash_launcher'		- интеграция с лаунчером sashok724 (Регистрация через лаунчер)
 	*/
-	$crypt 				= 'hash_md5';
+	$crypt 				= 'hash_wordpress';
 	
 	$db_host			= 'localhost'; // Ip-адрес MySQL
 	$db_port			= '3306'; // Порт базы данных
 	$db_user			= 'root'; // Пользователь базы данных
 	$db_pass			= 'root'; // Пароль базы данных
-	$db_database		= 'w'; //База данных
+	$db_database		= 'wordpress'; //База данных
 	
-	$db_table       	= 'accounts'; //Таблица с пользователями
+	$db_table       	= 'wp_users'; //Таблица с пользователями
 	$db_columnId  		= 'id'; //Колонка с ID пользователей
-	$db_columnUser  	= 'login'; //Колонка с именами пользователей
-	$db_columnPass  	= 'password'; //Колонка с паролями пользователей
+	$db_columnUser  	= 'user_login'; //Колонка с именами пользователей
+	$db_columnPass  	= 'user_pass'; //Колонка с паролями пользователей
 	$db_tableOther 		= 'xf_user_authenticate'; //Дополнительная таблица для XenForo, не трогайте
 	$db_columnSalt  	= 'members_pass_salt'; //Настраивается для IPB и vBulletin: , IPB - members_pass_salt, vBulletin - salt
     $db_columnIp  		= 'ip'; //Колонка с IP пользователей
@@ -54,8 +54,8 @@
 
 //========================= Настройки ЛК =======================//	
 
-	$uploaddirs         = 'MinecraftSkin';  //Папка скинов
-	$uploaddirp         = 'MinecraftCloak'; //Папка плащей
+	$uploaddirs         = 'MinecraftSkins';  //Папка скинов
+	$uploaddirp         = 'MinecraftCloaks'; //Папка плащей
     $skinurl            = 'http://alexandrage.ru/site/'.$uploaddirs.'/'; //Ссылка на скины для клиентов 1.7.+
     $capeurl            = 'http://alexandrage.ru/site/'.$uploaddirp.'/'; //Ссылка на плащи для клиентов 1.7.+
 	
