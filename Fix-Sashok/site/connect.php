@@ -34,6 +34,8 @@
 	
 	$db_columnDatareg   = 'create_time'; // Колонка даты регистрации
 	$db_columnMail      = 'email'; // Колонка mail
+	
+	$db_tables_prefix   = 'lnch_';
 
 	$banlist            = 'banlist'; //Таблица плагина Ultrabans
 	
@@ -85,7 +87,7 @@
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$db->exec("set names utf8");
 		$stmt = $db->prepare("
-        CREATE TABLE IF NOT EXISTS `usersession` (
+        CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."usersession` (
 	    `id` int(11) NOT NULL AUTO_INCREMENT,
 	    `user` varchar(255) DEFAULT 'user',
 	    `session` varchar(255) DEFAULT NULL,
@@ -98,14 +100,14 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-        CREATE TABLE IF NOT EXISTS `sashok724_launcher_keys` (
+        CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."sashok724_launcher_keys` (
 	    `key` varchar(255) DEFAULT NULL,
 	    `amount` int(255) DEFAULT NULL
 	    ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `sip` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."sip` (
 		  `time` varchar(255) NOT NULL,
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `sip` varchar(16) DEFAULT NULL,
@@ -114,7 +116,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `jobs` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."jobs` (
 		  `username` varchar(20) DEFAULT NULL,
 		  `experience` int(11) DEFAULT NULL,
 		  `level` int(11) DEFAULT NULL,
@@ -123,7 +125,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `iConomy` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."iConomy` (
 		  `id` int(255) NOT NULL AUTO_INCREMENT,
 		  `username` varchar(32) NOT NULL,
 		  `balance` double(64,2) NOT NULL,
@@ -134,7 +136,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `banlist` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."banlist` (
 		  `name` varchar(32) NOT NULL,
 		  `reason` text NOT NULL,
 		  `admin` varchar(32) NOT NULL,
@@ -148,7 +150,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `name` varchar(50) NOT NULL,
 		  `type` tinyint(1) NOT NULL,
@@ -163,7 +165,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions_entity` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions_entity` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `name` varchar(50) NOT NULL,
 		  `type` tinyint(1) NOT NULL,
@@ -177,7 +179,7 @@
 		");
 		$stmt->execute();
 		$stmt = $db->prepare("
-		CREATE TABLE IF NOT EXISTS `permissions_inheritance` (
+		CREATE TABLE IF NOT EXISTS `".$db_tables_prefix."permissions_inheritance` (
 		  `id` int(11) NOT NULL AUTO_INCREMENT,
 		  `child` varchar(50) NOT NULL,
 		  `parent` varchar(50) NOT NULL,
