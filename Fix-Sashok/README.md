@@ -11,6 +11,7 @@ Fix-Sashok
 * clients/name/natives/ нативы для lwjgl.
 
 Ссылки для авторизации 1.7.2-1.8.1 указываем в классе YggdrasilMinecraftSessionService.class
-"http://minecraft/site/"
-"http://minecraft/site/j.php"
-"http://minecraft/site/h.php"
+"https://sessionserver.mojang.com/session/minecraft/" -> "http://minecraft/site/"
+"https://sessionserver.mojang.com/session/minecraft/join" -> "http://minecraft/site/j.php"
+"https://sessionserver.mojang.com/session/minecraft/hasJoined" -> "http://minecraft/site/h.php"
+"https://sessionserver.mojang.com/session/minecraft/profile/" -> "http://minecraft/site/s.php?user="

@@ -27,7 +27,7 @@ public class LoginTheme
 	public static ButtonStyle	 toAuth      = new ButtonStyle(30, 110, 230, 40, "font", "button", fontbasesize, Color.RED, true, Align.CENTER);
 	public static ButtonStyle	 toLogout    = new ButtonStyle(30, 70, 230, 40, "font", "button", fontbasesize, Color.RED, true, Align.CENTER);
 	public static ButtonStyle	 toGame      = new ButtonStyle(30, 210, 230, 40, "font", "button", fontbasesize, Color.GREEN, true, Align.CENTER);
-	public static ButtonStyle	 toPersonal  = new ButtonStyle(30, 436, 230, 40, "font", "button", fontbasesize, Color.GREEN, true, Align.CENTER);
+	public static ButtonStyle	 toPersonal  = new ButtonStyle(30, 255, 230, 40, "font", "button", fontbasesize, Color.GREEN, true, Align.CENTER);
 	public static ButtonStyle	 toOptions   = new ButtonStyle(30, 400, 230, 40, "font", "button", fontbasesize, Color.YELLOW, true, Align.CENTER);
 	public static ButtonStyle	 toRegister  = new ButtonStyle(30, 436, 230, 40, "font", "button", fontbasesize, Color.YELLOW, true, Align.CENTER);
 	

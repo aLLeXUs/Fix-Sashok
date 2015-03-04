@@ -37,7 +37,7 @@
 	
 	$db_tables_prefix   = 'lnch_';
 
-	$banlist            = 'banlist'; //Таблица плагина Ultrabans
+	$banlist            = $db_tables_prefix.'banlist'; //Таблица плагина Ultrabans
 	
 	$useban             =  false; //Бан на сервере = бан в лаунчере, Ultrabans плагин
 	$useantibrut        =  true; //Защита от частых подборов пароля (Пауза 1 минута при неправильном пароле)
